@@ -1,5 +1,7 @@
 var btnEl = document.querySelector("#start-quiz");
-var timerEl = document.getElementById('countdown');
+var bodyEl = document.querySelector("#description");
+var h1El = document.querySelector("#quiz-title");
+var timerEl = document.querySelector('#countdown');
 
 
 function countdown() {
@@ -16,5 +18,11 @@ function countdown() {
         }
     }, 1000);
 }
+
+function startQuiz() {
+    
+
+}
+
 btnEl.addEventListener("click", countdown);
 //countdown();
