@@ -33,21 +33,36 @@ header {
     padding:10px 20px;
 }
 
-#question-one, #question-two {
+#question-one, #question-two, #question-three, #question-four, #question-five {
     padding: 20px;
 }
 
-#q1, #q2 {
+#q1, #q2, #q3, #q4, #q5 {
     text-align: center;
 }
 
+#q1-opt1, #q1-opt2, #q1-opt3, #q1-opt4, 
+#q2-opt1, #q2-opt2, #q2-opt3, #q2-opt4,
+#q3-opt1, #q3-opt2, #q3-opt3, #q3-opt4,
+#q4-opt1, #q4-opt2, #q4-opt3, #q4-opt4,
+#q5-opt1, #q5-opt2, #q5-opt3, #q5-opt4 {
+    display: flex;
+}
+
 #q1-opt1, #q1-opt2, #q1-opt3, #q1-opt4 {
-    display:flex;
     margin:20px 20px 20px 45%;
 }
 #q2-opt1, #q2-opt2, #q2-opt3, #q2-opt4 {
-    display: flex;
     margin:20px 20px 20px 43%;
+}
+#q3-opt1, #q3-opt2, #q3-opt3, #q3-opt4 {
+    margin:20px 20px 20px 42%;
+}
+#q4-opt1, #q4-opt2, #q4-opt3, #q4-opt4 {
+    margin: 20px 20px 20px 45%;
+}
+#q5-opt1, #q5-opt2, #q5-opt3, #q5-opt4 {
+    margin: 20px 20px 20px 45%;
 }
 
 #q1-opt1 {
@@ -68,4 +83,34 @@ header {
 }
 #q2-opt3 {
     padding-right: 54px;
+}
+
+#q3-opt2 {
+    padding-right: 87px;
+}
+#q3-opt3 {
+    padding-right: 125px;
+}
+#q3-opt4 {
+    padding-right: 72px;
+}
+
+#q4-opt1 {
+    padding-right: 70px;
+}
+#q4-opt3 {
+    padding-right: 86px;
+}
+#q4-opt4 {
+    padding-right: 39px;
+}
+
+#q5-opt1 {
+    padding-right: 54px;
+}
+#q5-opt3 {
+    padding-right: 57px;
+}
+#q5-opt4 {
+    padding-right: 42px;
 }
