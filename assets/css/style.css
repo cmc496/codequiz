@@ -33,11 +33,11 @@ header {
     padding:10px 20px;
 }
 
-#question-one {
+#question-one, #question-two {
     padding: 20px;
 }
 
-#q1 {
+#q1, #q2 {
     text-align: center;
 }
 
@@ -45,6 +45,11 @@ header {
     display:flex;
     margin:20px 20px 20px 45%;
 }
+#q2-opt1, #q2-opt2, #q2-opt3, #q2-opt4 {
+    display: flex;
+    margin:20px 20px 20px 43%;
+}
+
 #q1-opt1 {
     padding-right: 40px;
 }
@@ -53,4 +58,14 @@ header {
 }
 #q1-opt4 {
     padding-right: 22px;
+}
+
+#q2-opt1 {
+    padding-right: 102px;
+}
+#q2-opt2 {
+    padding-right: 37px;
+}
+#q2-opt3 {
+    padding-right: 54px;
 }
