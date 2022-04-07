@@ -32,3 +32,25 @@ header {
     font-size: 20px;
     padding:10px 20px;
 }
+
+#question-one {
+    padding: 20px;
+}
+
+#q1 {
+    text-align: center;
+}
+
+#q1-opt1, #q1-opt2, #q1-opt3, #q1-opt4 {
+    display:flex;
+    margin:20px 20px 20px 45%;
+}
+#q1-opt1 {
+    padding-right: 40px;
+}
+#q1-opt3 {
+    padding-right: 53px;
+}
+#q1-opt4 {
+    padding-right: 22px;
+}
