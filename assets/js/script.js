@@ -1,5 +1,6 @@
 var timerEl = document.querySelector('#countdown');
 var highScore = document.querySelector('#high-score');
+var timeLeft = 60;
 
 var btnEl = document.querySelector("#start-quiz");
 
@@ -28,15 +29,21 @@ var btnQ5Opt2 = document.querySelector("#q5-opt2");
 var btnQ5Opt3 = document.querySelector("#q5-opt3");
 var btnQ5Opt4 = document.querySelector("#q5-opt4");
 
+var correctAnswer = document.querySelector("#correct-answer");
+var incorrectAnswer = document.querySelector("#incorrect-answer");
+
+//var score = question1 + question2 + question3 + question4 + question5;
+
 document.getElementById("question-one").style.display = "none";
 document.getElementById("question-two").style.display = "none";
 document.getElementById("question-three").style.display = "none";
 document.getElementById("question-four").style.display = "none";
 document.getElementById("question-five").style.display = "none";
 document.getElementById("quiz-over").style.display = "none";
+document.getElementById("correct-answer").style.display = "none";
+document.getElementById("incorrect-answer").style.display = "none";
 
 function countdown() {
-    var timeLeft = 60;
 
     var timeInterval = setInterval(function () {
         if (timeLeft > 0) {
@@ -46,11 +53,17 @@ function countdown() {
         else {
             timerEl.textContent = "Time's up!";
             clearInterval(timeInterval);
+            document.getElementById("question-one").style.display = "none";
+            document.getElementById("question-two").style.display = "none";
+            document.getElementById("question-three").style.display = "none";
+            document.getElementById("question-four").style.display = "none";
+            document.getElementById("question-five").style.display = "none";
+            document.getElementById("quiz-over").style.display = "block";
         }
     }, 1000);
-}
+};
 
-var questionOne = document.getElementById('question-one');
+//var questionOne = document.getElementById('question-one');
 
 function startQuiz() {
     document.getElementById("description").style.display = "none";
@@ -70,14 +83,16 @@ btnQ1Opt4.addEventListener("click", firstIncorrectAnswer);
 function firstCorrectAnswer() {
     document.getElementById("question-one").style.display = "none";
     document.getElementById("question-two").style.display = "block";
-    // add message under question reading "correct!"
+    document.getElementById("correct-answer").style.display = "block";
+    document.getElementById("incorrect-answer").style.display = "none";
     // add points to score
 };
 function firstIncorrectAnswer() {
     document.getElementById("question-one").style.display = "none";
     document.getElementById("question-two").style.display = "block";
-    // add message under question reading "incorrect!"
-    // subtract 10 seconds off of timer
+    document.getElementById("incorrect-answer").style.display = "block";
+    document.getElementById("correct-answer").style.display = "none";
+    timeLeft = timeLeft - 10;
 };
 
 var questionTwo = document.getElementById('question-two');
@@ -90,14 +105,16 @@ btnQ2Opt4.addEventListener("click", secondIncorrectAnswer);
 function secondCorrectAnswer() {
     document.getElementById("question-two").style.display = "none";
     document.getElementById("question-three").style.display = "block";
-    // add message under question reading "correct!"
+    document.getElementById("correct-answer").style.display = "block";
+    document.getElementById("incorrect-answer").style.display = "none";
     // add points to score
 };
 function secondIncorrectAnswer() {
     document.getElementById("question-two").style.display = "none";
     document.getElementById("question-three").style.display = "block";
-    // add message reading "incorrect!"
-    // subtract 10 seconds off of timer
+    document.getElementById("incorrect-answer").style.display = "block";
+    document.getElementById("correct-answer").style.display = "none";
+    timeLeft = timeLeft - 10;
 };
 
 var questionThree = document.getElementById('question-three');
@@ -110,14 +127,16 @@ btnQ3Opt4.addEventListener("click", thirdCorrectAnswer);
 function thirdCorrectAnswer() {
     document.getElementById("question-three").style.display = "none";
     document.getElementById("question-four").style.display = "block";
-    // add message reading "correct!"
+    document.getElementById("correct-answer").style.display = "block";
+    document.getElementById("incorrect-answer").style.display = "none";
     // add points to score
 };
 function thirdIncorrectAnswer() {
     document.getElementById("question-three").style.display = "none";
     document.getElementById("question-four").style.display = "block";
-    // add message reading "incorrect!"
-    // subtract 10 seconds off of timer
+    document.getElementById("incorrect-answer").style.display = "block";
+    document.getElementById("correct-answer").style.display = "none";
+    timeLeft = timeLeft - 10;
 };
 
 var questionFour = document.getElementById('question-four');
@@ -130,14 +149,16 @@ btnQ4Opt4.addEventListener("click", fourthIncorrectAnswer);
 function fourthCorrectAnswer() {
     document.getElementById("question-four").style.display = "none";
     document.getElementById("question-five").style.display = "block";
-    // add message reading "correct!"
+    document.getElementById("correct-answer").style.display = "block";
+    document.getElementById("incorrect-answer").style.display = "none";
     // add points to score
 };
 function fourthIncorrectAnswer() {
     document.getElementById("question-four").style.display = "none";
     document.getElementById("question-five").style.display = "block";
-    // add message reading "incorrect!"
-    // subtract 10 seconds off of score
+    document.getElementById("incorrect-answer").style.display = "block";
+    document.getElementById("correct-answer").style.display = "none";
+    timeLeft = timeLeft - 10;
 };
 
 var questionFive = document.getElementById('question-five');
@@ -149,15 +170,18 @@ btnQ5Opt4.addEventListener("click", fifthIncorrectAnswer);
 
 function fifthCorrectAnswer() {
     document.getElementById("question-five").style.display = "none";
-    document.getElementById("question-six").style.display = "block";
-    // add message reading "correct!"
+    document.getElementById("quiz-over").style.display = "block";
+    document.getElementById("correct-answer").style.display = "block";
+    document.getElementById("incorrect-answer").style.display = "none";
     // add points to score
 };
 function fifthIncorrectAnswer() {
     document.getElementById("question-five").style.display = "none";
     document.getElementById("quiz-over").style.display = "block";
-    // add message reading "incorrect!"
-    // subtract 10 seconds off of score
+    document.getElementById("incorrect-answer").style.display = "block";
+    document.getElementById("correct-answer").style.display = "none";
+    timeLeft = timeLeft - 10;
 };
+
 
 

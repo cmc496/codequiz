@@ -12,12 +12,31 @@ header {
     padding: 10px;
 }
 
-#quiz-title, #overview {
+#quiz-title, #overview, #q1, #q2, #q3, #q4, #q5, #all-done, #final-score, #initials, #correct, #incorrect {
     text-align: center;
+}
+
+#all-done {
+    font-size: 50px;
 }
 
 #overview {
     font-size: 20px;
+}
+
+#final-score, #initials {
+    font-size: 35px;
+}
+
+#correct, #incorrect {
+    font-size: 20px;
+    font-style: italic;
+}
+#correct {
+    color: green;
+}
+#incorrect {
+    color: red;
 }
 
 #start-button {
@@ -33,12 +52,12 @@ header {
     padding:10px 20px;
 }
 
-#question-one, #question-two, #question-three, #question-four, #question-five {
-    padding: 20px;
+#question-one, #question-two, #question-three, #question-four, #question-five, #quiz-over {
+    margin: auto;
 }
-
-#q1, #q2, #q3, #q4, #q5 {
-    text-align: center;
+#question-two, #question-three, #question-four, #question-five, #quiz-over {
+    border-bottom: 3px solid black;
+    width: 50%;
 }
 
 #q1-opt1, #q1-opt2, #q1-opt3, #q1-opt4, 
@@ -50,19 +69,19 @@ header {
 }
 
 #q1-opt1, #q1-opt2, #q1-opt3, #q1-opt4 {
-    margin:20px 20px 20px 45%;
+    margin: 20px auto;
 }
 #q2-opt1, #q2-opt2, #q2-opt3, #q2-opt4 {
-    margin:20px 20px 20px 43%;
+    margin: 20px auto;
 }
 #q3-opt1, #q3-opt2, #q3-opt3, #q3-opt4 {
-    margin:20px 20px 20px 42%;
+    margin: 20px auto;
 }
 #q4-opt1, #q4-opt2, #q4-opt3, #q4-opt4 {
-    margin: 20px 20px 20px 45%;
+    margin: 20px auto;
 }
 #q5-opt1, #q5-opt2, #q5-opt3, #q5-opt4 {
-    margin: 20px 20px 20px 45%;
+    margin: 20px auto;
 }
 
 #q1-opt1 {
