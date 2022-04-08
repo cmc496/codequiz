@@ -7,12 +7,12 @@ header {
     justify-content: space-between;
 }
 
-#high-score, #countdown {
+#high-score, #countdown, #final-time {
     font-size: 20px;
     padding: 10px;
 }
 
-#quiz-title, #overview, #q1, #q2, #q3, #q4, #q5, #all-done, #final-score, #initials, #correct, #incorrect {
+#quiz-title, #overview, #q1, #q2, #q3, #q4, #q5, #all-done, #final-score, #correct, #incorrect {
     text-align: center;
 }
 
@@ -24,8 +24,14 @@ header {
     font-size: 20px;
 }
 
-#final-score, #initials {
+#final-score, #display-score, #initials {
     font-size: 35px;
+}
+#final-score {
+    margin-left: 100px;
+}
+#display-score {
+    margin-left: 20px;
 }
 
 #correct, #incorrect {
@@ -66,6 +72,10 @@ header {
 #q4-opt1, #q4-opt2, #q4-opt3, #q4-opt4,
 #q5-opt1, #q5-opt2, #q5-opt3, #q5-opt4 {
     display: flex;
+}
+
+#final-score, #display-score {
+    display: inline-block;
 }
 
 #q1-opt1, #q1-opt2, #q1-opt3, #q1-opt4 {

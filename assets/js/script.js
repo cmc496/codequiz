@@ -1,6 +1,10 @@
 var timerEl = document.querySelector('#countdown');
+var finalTime = document.querySelector('#final-time');
 var highScore = document.querySelector('#high-score');
+var displayScore = document.querySelector('#display-score');
+var initalsInput = document.querySelector('#enter-initials');
 var timeLeft = 60;
+var score = 0;
 
 var btnEl = document.querySelector("#start-quiz");
 
@@ -32,8 +36,6 @@ var btnQ5Opt4 = document.querySelector("#q5-opt4");
 var correctAnswer = document.querySelector("#correct-answer");
 var incorrectAnswer = document.querySelector("#incorrect-answer");
 
-//var score = question1 + question2 + question3 + question4 + question5;
-
 document.getElementById("question-one").style.display = "none";
 document.getElementById("question-two").style.display = "none";
 document.getElementById("question-three").style.display = "none";
@@ -42,6 +44,8 @@ document.getElementById("question-five").style.display = "none";
 document.getElementById("quiz-over").style.display = "none";
 document.getElementById("correct-answer").style.display = "none";
 document.getElementById("incorrect-answer").style.display = "none";
+document.getElementById("final-time").style.display = "none";
+document.getElementById("enter-initials").style.display = "none";
 
 function countdown() {
 
@@ -58,12 +62,10 @@ function countdown() {
             document.getElementById("question-three").style.display = "none";
             document.getElementById("question-four").style.display = "none";
             document.getElementById("question-five").style.display = "none";
-            document.getElementById("quiz-over").style.display = "block";
+            document.getElementById("quiz-over").style.display = "block";   
         }
     }, 1000);
 };
-
-//var questionOne = document.getElementById('question-one');
 
 function startQuiz() {
     document.getElementById("description").style.display = "none";
@@ -73,7 +75,6 @@ function startQuiz() {
 
 btnEl.addEventListener("click", countdown);
 btnEl.addEventListener("click", startQuiz);
-
 
 btnQ1Opt1.addEventListener("click", firstIncorrectAnswer);
 btnQ1Opt2.addEventListener("click", firstIncorrectAnswer);
@@ -85,7 +86,7 @@ function firstCorrectAnswer() {
     document.getElementById("question-two").style.display = "block";
     document.getElementById("correct-answer").style.display = "block";
     document.getElementById("incorrect-answer").style.display = "none";
-    // add points to score
+    score = score + 20;
 };
 function firstIncorrectAnswer() {
     document.getElementById("question-one").style.display = "none";
@@ -94,8 +95,6 @@ function firstIncorrectAnswer() {
     document.getElementById("correct-answer").style.display = "none";
     timeLeft = timeLeft - 10;
 };
-
-var questionTwo = document.getElementById('question-two');
 
 btnQ2Opt1.addEventListener("click", secondIncorrectAnswer);
 btnQ2Opt2.addEventListener("click", secondIncorrectAnswer);
@@ -107,7 +106,7 @@ function secondCorrectAnswer() {
     document.getElementById("question-three").style.display = "block";
     document.getElementById("correct-answer").style.display = "block";
     document.getElementById("incorrect-answer").style.display = "none";
-    // add points to score
+    score = score + 20;
 };
 function secondIncorrectAnswer() {
     document.getElementById("question-two").style.display = "none";
@@ -116,8 +115,6 @@ function secondIncorrectAnswer() {
     document.getElementById("correct-answer").style.display = "none";
     timeLeft = timeLeft - 10;
 };
-
-var questionThree = document.getElementById('question-three');
 
 btnQ3Opt1.addEventListener("click", thirdIncorrectAnswer);
 btnQ3Opt2.addEventListener("click", thirdIncorrectAnswer);
@@ -129,7 +126,7 @@ function thirdCorrectAnswer() {
     document.getElementById("question-four").style.display = "block";
     document.getElementById("correct-answer").style.display = "block";
     document.getElementById("incorrect-answer").style.display = "none";
-    // add points to score
+    score = score + 20;
 };
 function thirdIncorrectAnswer() {
     document.getElementById("question-three").style.display = "none";
@@ -138,8 +135,6 @@ function thirdIncorrectAnswer() {
     document.getElementById("correct-answer").style.display = "none";
     timeLeft = timeLeft - 10;
 };
-
-var questionFour = document.getElementById('question-four');
 
 btnQ4Opt1.addEventListener("click", fourthIncorrectAnswer);
 btnQ4Opt2.addEventListener("click", fourthIncorrectAnswer);
@@ -151,7 +146,7 @@ function fourthCorrectAnswer() {
     document.getElementById("question-five").style.display = "block";
     document.getElementById("correct-answer").style.display = "block";
     document.getElementById("incorrect-answer").style.display = "none";
-    // add points to score
+    score = score + 20;
 };
 function fourthIncorrectAnswer() {
     document.getElementById("question-four").style.display = "none";
@@ -160,8 +155,6 @@ function fourthIncorrectAnswer() {
     document.getElementById("correct-answer").style.display = "none";
     timeLeft = timeLeft - 10;
 };
-
-var questionFive = document.getElementById('question-five');
 
 btnQ5Opt1.addEventListener("click", fifthIncorrectAnswer);
 btnQ5Opt2.addEventListener("click", fifthIncorrectAnswer);
@@ -173,7 +166,15 @@ function fifthCorrectAnswer() {
     document.getElementById("quiz-over").style.display = "block";
     document.getElementById("correct-answer").style.display = "block";
     document.getElementById("incorrect-answer").style.display = "none";
-    // add points to score
+    score = score + 20;
+    console.log(score);
+    document.getElementById('countdown').style.display = "none";
+    if (document.getElementById('countdown').style.display = "none") {
+        document.getElementById('final-time').style.display = "block";
+        finalTime.textContent = 'Time: ' + timeLeft;
+    }
+    displayScore.textContent = score;
+    document.getElementById('enter-initials').style.display = "block";
 };
 function fifthIncorrectAnswer() {
     document.getElementById("question-five").style.display = "none";
@@ -181,7 +182,12 @@ function fifthIncorrectAnswer() {
     document.getElementById("incorrect-answer").style.display = "block";
     document.getElementById("correct-answer").style.display = "none";
     timeLeft = timeLeft - 10;
+    console.log(score);
+    document.getElementById('countdown').style.display = "none";
+    if (document.getElementById('countdown').style.display = "none") {
+        document.getElementById('final-time').style.display = "block";
+        finalTime.textContent = 'Time: ' + timeLeft;
+    }
+    displayScore.textContent = score;
+    document.getElementById('enter-initials').style.display = "block";
 };
-
-
-

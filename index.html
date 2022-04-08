@@ -10,6 +10,7 @@
         <header class="header" id="header">
             <p id ="high-score">View High Scores</p>
             <p id ="countdown"></p>
+            <p id ="final-time"></p>
         </header>
         <div id="description" class="description">
             <h1 id="quiz-title">Coding Quiz Challenge</h1>
@@ -42,7 +43,7 @@
             <h1 id="q3">Arrays in JavaScript can be used to store ______.</h1>
             <div id="q3-buttons">
                 <button class="btn" id="q3-opt1">1. Numbers and Strings</button>
-                <button class="btn" id="q3-opt2">2. Others arrays</button>
+                <button class="btn" id="q3-opt2">2. Other arrays</button>
                 <button class="btn" id="q3-opt3">3. Booleans</button>
                 <button class="btn" id="q3-opt4">4. All of the above</button>
             </div>
@@ -67,8 +68,14 @@
         </div>
         <div id="quiz-over">
             <h1 id="all-done">All done!</h1>
-            <p id="final-score">Your final score is: </p>
-            <p id="initials">Enter initials:</p>
+            <div id="scores">
+                <p id="final-score">Your final score is: </p>
+                <p id="display-score"></p>
+            </div>
+            <div id="initials">
+                <p id="enter-initials">Enter initials:</p>
+                    <input id="initials-submit" type="text" placeholder="initials"/>
+            </div>
         </div>
         <div id="correct-answer">
             <p id="correct">Correct!</p>
