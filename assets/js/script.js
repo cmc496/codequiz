@@ -2,7 +2,7 @@ var timerEl = document.querySelector('#countdown');
 var finalTime = document.querySelector('#final-time');
 var highScore = document.querySelector('#high-score');
 var displayScore = document.querySelector('#display-score');
-var initalsInput = document.querySelector('#enter-initials');
+
 var timeLeft = 60;
 var score = 0;
 
@@ -32,6 +32,10 @@ var btnQ5Opt1 = document.querySelector("#q5-opt1");
 var btnQ5Opt2 = document.querySelector("#q5-opt2");
 var btnQ5Opt3 = document.querySelector("#q5-opt3");
 var btnQ5Opt4 = document.querySelector("#q5-opt4");
+
+var btnSubmit = document.querySelector("#submit");
+
+var stats = [];
 
 var correctAnswer = document.querySelector("#correct-answer");
 var incorrectAnswer = document.querySelector("#incorrect-answer");
@@ -158,8 +162,8 @@ function fourthIncorrectAnswer() {
 
 btnQ5Opt1.addEventListener("click", fifthIncorrectAnswer);
 btnQ5Opt2.addEventListener("click", fifthIncorrectAnswer);
-btnQ5Opt3.addEventListener("click", fifthCorrectAnswer);
-btnQ5Opt4.addEventListener("click", fifthIncorrectAnswer);
+btnQ5Opt3.addEventListener("click", fifthIncorrectAnswer);
+btnQ5Opt4.addEventListener("click", fifthCorrectAnswer);
 
 function fifthCorrectAnswer() {
     document.getElementById("question-five").style.display = "none";
@@ -175,6 +179,10 @@ function fifthCorrectAnswer() {
     }
     displayScore.textContent = score;
     document.getElementById('enter-initials').style.display = "block";
+    localStorage.setItem("score", JSON.stringify(score));
+    var savedInitials = function() {document.getElementById('initials-submit').value;};
+    btnSubmit.addEventListener("click", savedInitials());
+    console.log(savedInitials());
 };
 function fifthIncorrectAnswer() {
     document.getElementById("question-five").style.display = "none";
@@ -190,4 +198,11 @@ function fifthIncorrectAnswer() {
     }
     displayScore.textContent = score;
     document.getElementById('enter-initials').style.display = "block";
+
+    localStorage.setItem("score", JSON.stringify(score));
+    var savedInitials = function() {document.getElementById('initials-submit').value;};
+    btnSubmit.addEventListener("click", savedInitials());
+    console.log(savedInitials());
+    
+   
 };
