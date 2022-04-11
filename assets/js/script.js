@@ -37,7 +37,7 @@ var btnSubmit = document.querySelector("#submit");
 
 var btnHighScores = document.querySelector('#high-score-menu');
 
-var stats = [];
+var statsDisplayed = document.getElementById('stats');
 
 var correctAnswer = document.querySelector("#correct-answer");
 var incorrectAnswer = document.querySelector("#incorrect-answer");
@@ -183,9 +183,25 @@ function fifthCorrectAnswer() {
     displayScore.textContent = score;
     document.getElementById('enter-initials').style.display = "block";
     localStorage.setItem("score", JSON.stringify(score));
-    var savedInitials = function() {document.getElementById('initials-submit').value;};
-    btnSubmit.addEventListener("click", savedInitials);
-    console.log(savedInitials);
+    function getSavedInitials() {
+        var savedInitials = document.getElementById('initials-submit');
+        localStorage.setItem('initials', savedInitials.value);
+
+        function showHighScores() {
+            document.getElementById("quiz-over").style.display = "none";
+            document.getElementById("incorrect-answer").style.display = "none";
+            document.getElementById("correct-answer").style.display = "none";
+            document.getElementById("high-score-page").style.display = "block";
+        
+            var createLi = document.createElement("li");
+            createLi.textContent = savedInitials.value + " " + score;
+            statsDisplayed.appendChild(createLi);
+        };
+        btnHighScores.addEventListener("click", showHighScores);
+    }
+    btnSubmit.addEventListener("click", getSavedInitials);
+
+    
 };
 function fifthIncorrectAnswer() {
     document.getElementById("question-five").style.display = "none";
@@ -203,15 +219,22 @@ function fifthIncorrectAnswer() {
     document.getElementById('enter-initials').style.display = "block";
 
     localStorage.setItem("score", JSON.stringify(score));
-    var savedInitials = function() {document.getElementById('initials-submit').value;};
-    btnSubmit.addEventListener("click", savedInitials);
-    console.log(savedInitials);
-};
-function showHighScores() {
-    document.getElementById("quiz-over").style.display = "none";
-    document.getElementById("incorrect-answer").style.display = "none";
-    document.getElementById("correct-answer").style.display = "none";
-    document.getElementById("high-score-page").style.display = "block";
-};
+    function getSavedInitials() {
+        var savedInitials = document.getElementById('initials-submit');
+        localStorage.setItem('initials', savedInitials.value);
 
-btnHighScores.addEventListener("click", showHighScores);
+        function showHighScores() {
+            document.getElementById("quiz-over").style.display = "none";
+            document.getElementById("incorrect-answer").style.display = "none";
+            document.getElementById("correct-answer").style.display = "none";
+            document.getElementById("high-score-page").style.display = "block";
+        
+            var createLi = document.createElement("li");
+            createLi.textContent = savedInitials.value + " " + score;
+            statsDisplayed.appendChild(createLi);
+        };
+        btnHighScores.addEventListener("click", showHighScores);
+    }
+    btnSubmit.addEventListener("click", getSavedInitials);
+
+};

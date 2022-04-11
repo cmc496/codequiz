@@ -172,3 +172,11 @@ header {
 #q5-opt4 {
     padding-right: 42px;
 }
+ul {
+    padding: 0px;
+    list-style-type: none;
+}
+li {
+    text-align: center;
+    list-style-type: none;
+}
