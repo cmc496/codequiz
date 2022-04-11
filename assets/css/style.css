@@ -7,12 +7,17 @@ header {
     justify-content: space-between;
 }
 
-#high-score, #countdown, #final-time {
+#high-score-menu, #countdown, #final-time {
     font-size: 20px;
     padding: 10px;
 }
+#high-score-menu {
+    margin: 20px 0px;
+    background: none;
+    border: none;
+}
 
-#quiz-title, #overview, #q1, #q2, #q3, #q4, #q5, #all-done, #final-score, #correct, #incorrect {
+#quiz-title, #overview, #q1, #q2, #q3, #q4, #q5, #all-done, #final-score, #correct, #incorrect, #high-scores {
     text-align: center;
 }
 

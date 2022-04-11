@@ -1,6 +1,5 @@
 var timerEl = document.querySelector('#countdown');
 var finalTime = document.querySelector('#final-time');
-var highScore = document.querySelector('#high-score');
 var displayScore = document.querySelector('#display-score');
 
 var timeLeft = 60;
@@ -35,6 +34,8 @@ var btnQ5Opt4 = document.querySelector("#q5-opt4");
 
 var btnSubmit = document.querySelector("#submit");
 
+var btnHighScores = document.querySelector('#high-score-menu');
+
 var stats = [];
 
 var correctAnswer = document.querySelector("#correct-answer");
@@ -50,6 +51,7 @@ document.getElementById("correct-answer").style.display = "none";
 document.getElementById("incorrect-answer").style.display = "none";
 document.getElementById("final-time").style.display = "none";
 document.getElementById("enter-initials").style.display = "none";
+document.getElementById("high-score-page").style.display = "none";
 
 function countdown() {
 
@@ -181,8 +183,8 @@ function fifthCorrectAnswer() {
     document.getElementById('enter-initials').style.display = "block";
     localStorage.setItem("score", JSON.stringify(score));
     var savedInitials = function() {document.getElementById('initials-submit').value;};
-    btnSubmit.addEventListener("click", savedInitials());
-    console.log(savedInitials());
+    btnSubmit.addEventListener("click", savedInitials);
+    console.log(savedInitials);
 };
 function fifthIncorrectAnswer() {
     document.getElementById("question-five").style.display = "none";
@@ -201,8 +203,14 @@ function fifthIncorrectAnswer() {
 
     localStorage.setItem("score", JSON.stringify(score));
     var savedInitials = function() {document.getElementById('initials-submit').value;};
-    btnSubmit.addEventListener("click", savedInitials());
-    console.log(savedInitials());
-    
-   
+    btnSubmit.addEventListener("click", savedInitials);
+    console.log(savedInitials);
 };
+function showHighScores() {
+    document.getElementById("quiz-over").style.display = "none";
+    document.getElementById("incorrect-answer").style.display = "none";
+    document.getElementById("correct-answer").style.display = "none";
+    document.getElementById("high-score-page").style.display = "block";
+};
+
+btnHighScores.addEventListener("click", showHighScores);
