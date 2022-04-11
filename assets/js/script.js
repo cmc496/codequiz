@@ -4,6 +4,7 @@ var displayScore = document.querySelector('#display-score');
 
 var timeLeft = 60;
 var score = 0;
+var initials = "";
 
 var btnEl = document.querySelector("#start-quiz");
 
