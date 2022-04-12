@@ -61,10 +61,13 @@ document.getElementById("high-score-page").style.display = "none";
 // timer element
 function countdown() {
     var timeInterval = setInterval(function () {
-        if (timeLeft > 0) {
+        if (timeLeft > 0 && document.getElementById('quiz-over').style.display == "none") {
             timerEl.textContent = 'Time: ' + timeLeft;
             timeLeft--;
         }
+        // if (timeLeft > 0 && document.getElementById('quiz-over').style.display == "block") {
+        //     clearInterval(timeInterval);
+        // }
         else {
             timerEl.textContent = "Time's up!";
             clearInterval(timeInterval);
